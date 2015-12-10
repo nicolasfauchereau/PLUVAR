@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://rawgit.com/andrewgiessel/leafletstuff/master/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_4bf3edc44037408fb7ba5615daad6023" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('http://{s}.tiles.mapbox.com/v3/nicolasf.ic0ebom5/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map tiles by <a href="http://www.mapbox.com/m">Mapbox</a> Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_4bf3edc44037408fb7ba5615daad6023', {
+                                       center:[-21, 166.458],
+                                       zoom: 8,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      /*
+      addition of the image layers
+      */
+      
+      
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+
+      
+      var circle_1 = L.circle([-19.721167, 163.659667], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_1.bindPopup("<div align='center'>\n    <img src='98801001.png' alt=BELEP AEROD.: [163.66E / -19.72S], 82.00 m. width='480' height='320'> </div>");
+      circle_1._popup.options.maxWidth = 300;
+      map.addLayer(circle_1)
+      
+      var circle_2 = L.circle([-21.9425, 165.999833], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_2.bindPopup("<div align='center'>\n    <img src='98802003.png' alt=BOURAKE: [166.00E / -21.94S], 53.00 m. width='480' height='320'> </div>");
+      circle_2._popup.options.maxWidth = 300;
+      map.addLayer(circle_2)
+      
+      var circle_3 = L.circle([-21.815, 166.063167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_3.bindPopup("<div align='center'>\n    <img src='98802008.png' alt=NASSIRAH: [166.06E / -21.82S], 52.00 m. width='480' height='320'> </div>");
+      circle_3._popup.options.maxWidth = 300;
+      map.addLayer(circle_3)
+      
+      var circle_4 = L.circle([-21.554833, 165.493833], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_4.bindPopup("<div align='center'>\n    <img src='98803001.png' alt=BOURAIL: [165.49E / -21.55S], 25.00 m. width='480' height='320'> </div>");
+      circle_4._popup.options.maxWidth = 300;
+      map.addLayer(circle_4)
+      
+      var circle_5 = L.circle([-21.480667, 165.365167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_5.bindPopup("<div align='center'>\n    <img src='98803002.png' alt=LE CAP MAORI: [165.37E / -21.48S], 70.00 m. width='480' height='320'> </div>");
+      circle_5._popup.options.maxWidth = 300;
+      map.addLayer(circle_5)
+      
+      var circle_6 = L.circle([-21.6205, 165.480167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_6.bindPopup("<div align='center'>\n    <img src='98803003.png' alt=NESSADIOU: [165.48E / -21.62S], 2.00 m. width='480' height='320'> </div>");
+      circle_6._popup.options.maxWidth = 300;
+      map.addLayer(circle_6)
+      
+      var circle_7 = L.circle([-21.474167, 165.581167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_7.bindPopup("<div align='center'>\n    <img src='98803006.png' alt=ME PARA: [165.58E / -21.47S], 835.00 m. width='480' height='320'> </div>");
+      circle_7._popup.options.maxWidth = 300;
+      map.addLayer(circle_7)
+      
+      var circle_8 = L.circle([-21.526333, 165.969167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_8.bindPopup("<div align='center'>\n    <img src='98804001.png' alt=CANALA: [165.97E / -21.53S], 35.00 m. width='480' height='320'> </div>");
+      circle_8._popup.options.maxWidth = 300;
+      map.addLayer(circle_8)
+      
+      var circle_9 = L.circle([-22.135667, 166.480833], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_9.bindPopup("<div align='center'>\n    <img src='98805001.png' alt=DUMBEA: [166.48E / -22.14S], 14.00 m. width='480' height='320'> </div>");
+      circle_9._popup.options.maxWidth = 300;
+      map.addLayer(circle_9)
+      
+      var circle_10 = L.circle([-20.688333, 164.9495], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_10.bindPopup("<div align='center'>\n    <img src='98807001.png' alt=HIENGHENE GEND.: [164.95E / -20.69S], 22.00 m. width='480' height='320'> </div>");
+      circle_10._popup.options.maxWidth = 300;
+      map.addLayer(circle_10)
+      
+      var circle_11 = L.circle([-21.278333, 165.628], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_11.bindPopup("<div align='center'>\n    <img src='98808001.png' alt=HOUAILOU P.: [165.63E / -21.28S], 11.00 m. width='480' height='320'> </div>");
+      circle_11._popup.options.maxWidth = 300;
+      map.addLayer(circle_11)
+      
+      var circle_12 = L.circle([-21.423333, 165.454], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_12.bindPopup("<div align='center'>\n    <img src='98808002.png' alt=COL ROUSSETTES: [165.45E / -21.42S], 361.00 m. width='480' height='320'> </div>");
+      circle_12._popup.options.maxWidth = 300;
+      map.addLayer(circle_12)
+      
+      var circle_13 = L.circle([-22.589833, 167.452167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_13.bindPopup("<div align='center'>\n    <img src='98809001.png' alt=MOUE: [167.45E / -22.59S], 95.00 m. width='480' height='320'> </div>");
+      circle_13._popup.options.maxWidth = 300;
+      map.addLayer(circle_13)
+      
+      var circle_14 = L.circle([-20.588, 164.525], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_14.bindPopup("<div align='center'>\n    <img src='98810003.png' alt=OUEHOLLE: [164.53E / -20.59S], 155.00 m. width='480' height='320'> </div>");
+      circle_14._popup.options.maxWidth = 300;
+      map.addLayer(circle_14)
+      
+      var circle_15 = L.circle([-21.051333, 164.8335], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_15.bindPopup("<div align='center'>\n    <img src='98811001.png' alt=KONE: [164.83E / -21.05S], 9.00 m. width='480' height='320'> </div>");
+      circle_15._popup.options.maxWidth = 300;
+      map.addLayer(circle_15)
+      
+      var circle_16 = L.circle([-20.9955, 164.825], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_16.bindPopup("<div align='center'>\n    <img src='98811002.png' alt=KONIAMBO: [164.82E / -21.00S], 895.00 m. width='480' height='320'> </div>");
+      circle_16._popup.options.maxWidth = 300;
+      map.addLayer(circle_16)
+      
+      var circle_17 = L.circle([-20.983667, 165.026167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_17.bindPopup("<div align='center'>\n    <img src='98811004.png' alt=TANGO: [165.03E / -20.98S], 341.00 m. width='480' height='320'> </div>");
+      circle_17._popup.options.maxWidth = 300;
+      map.addLayer(circle_17)
+      
+      var circle_18 = L.circle([-20.558667, 164.284167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_18.bindPopup("<div align='center'>\n    <img src='98812001.png' alt=KOUMAC: [164.28E / -20.56S], 25.00 m. width='480' height='320'> </div>");
+      circle_18._popup.options.maxWidth = 300;
+      map.addLayer(circle_18)
+      
+      var circle_19 = L.circle([-20.459667, 164.215], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_19.bindPopup("<div align='center'>\n    <img src='98812002.png' alt=TIEBAGHI: [164.22E / -20.46S], 595.00 m. width='480' height='320'> </div>");
+      circle_19._popup.options.maxWidth = 300;
+      map.addLayer(circle_19)
+      
+      var circle_20 = L.circle([-21.701333, 165.814667], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_20.bindPopup("<div align='center'>\n    <img src='98813001.png' alt=LA FOA: [165.81E / -21.70S], 12.00 m. width='480' height='320'> </div>");
+      circle_20._popup.options.maxWidth = 300;
+      map.addLayer(circle_20)
+      
+      var circle_21 = L.circle([-20.777, 167.2405], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_21.bindPopup("<div align='center'>\n    <img src='98814001.png' alt=OUANAHAM: [167.24E / -20.78S], 30.00 m. width='480' height='320'> </div>");
+      circle_21._popup.options.maxWidth = 300;
+      map.addLayer(circle_21)
+      
+      var circle_22 = L.circle([-20.918, 167.263667], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_22.bindPopup("<div align='center'>\n    <img src='98814002.png' alt=WE: [167.26E / -20.92S], 11.00 m. width='480' height='320'> </div>");
+      circle_22._popup.options.maxWidth = 300;
+      map.addLayer(circle_22)
+      
+      var circle_23 = L.circle([-21.092833, 167.363667], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_23.bindPopup("<div align='center'>\n    <img src='98814006.png' alt=WIWATUL: [167.36E / -21.09S], 44.00 m. width='480' height='320'> </div>");
+      circle_23._popup.options.maxWidth = 300;
+      map.addLayer(circle_23)
+      
+      var circle_24 = L.circle([-21.4815, 168.035667], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_24.bindPopup("<div align='center'>\n    <img src='98815001.png' alt=LA ROCHE: [168.04E / -21.48S], 41.00 m. width='480' height='320'> </div>");
+      circle_24._popup.options.maxWidth = 300;
+      map.addLayer(circle_24)
+      
+      var circle_25 = L.circle([-21.549, 167.884333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_25.bindPopup("<div align='center'>\n    <img src='98815002.png' alt=TADINE: [167.88E / -21.55S], 35.00 m. width='480' height='320'> </div>");
+      circle_25._popup.options.maxWidth = 300;
+      map.addLayer(circle_25)
+      
+      var circle_26 = L.circle([-22.229833, 166.600333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_26.bindPopup("<div align='center'>\n    <img src='98817005.png' alt=LA COULEE: [166.60E / -22.23S], 21.00 m. width='480' height='320'> </div>");
+      circle_26._popup.options.maxWidth = 300;
+      map.addLayer(circle_26)
+      
+      var circle_27 = L.circle([-22.3905, 166.9255], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_27.bindPopup("<div align='center'>\n    <img src='98817007.png' alt=CAP NDUA: [166.93E / -22.39S], 182.00 m. width='480' height='320'> </div>");
+      circle_27._popup.options.maxWidth = 300;
+      map.addLayer(circle_27)
+      
+      var circle_28 = L.circle([-22.276, 166.452833], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_28.bindPopup("<div align='center'>\n    <img src='98818001.png' alt=NOUMEA: [166.45E / -22.28S], 70.00 m. width='480' height='320'> </div>");
+      circle_28._popup.options.maxWidth = 300;
+      map.addLayer(circle_28)
+      
+      var circle_29 = L.circle([-22.260333, 166.473667], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_29.bindPopup("<div align='center'>\n    <img src='98818002.png' alt=MAGENTA: [166.47E / -22.26S], 3.00 m. width='480' height='320'> </div>");
+      circle_29._popup.options.maxWidth = 300;
+      map.addLayer(circle_29)
+      
+      var circle_30 = L.circle([-22.478333, 166.467333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_30.bindPopup("<div align='center'>\n    <img src='98818003.png' alt=PHARE AMEDEE: [166.47E / -22.48S], 3.00 m. width='480' height='320'> </div>");
+      circle_30._popup.options.maxWidth = 300;
+      map.addLayer(circle_30)
+      
+      var circle_31 = L.circle([-20.639167, 166.571], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_31.bindPopup("<div align='center'>\n    <img src='98820001.png' alt=OULOUP: [166.57E / -20.64S], 7.00 m. width='480' height='320'> </div>");
+      circle_31._popup.options.maxWidth = 300;
+      map.addLayer(circle_31)
+      
+      var circle_32 = L.circle([-22.017333, 166.222333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_32.bindPopup("<div align='center'>\n    <img src='98821001.png' alt=LA TONTOUTA: [166.22E / -22.02S], 37.00 m. width='480' height='320'> </div>");
+      circle_32._popup.options.maxWidth = 300;
+      map.addLayer(circle_32)
+      
+      var circle_33 = L.circle([-22.2205, 166.3425], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_33.bindPopup("<div align='center'>\n    <img src='98821006.png' alt=POINTE MA: [166.34E / -22.22S], 5.00 m. width='480' height='320'> </div>");
+      circle_33._popup.options.maxWidth = 300;
+      map.addLayer(circle_33)
+      
+      var circle_34 = L.circle([-20.9325, 165.328], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_34.bindPopup("<div align='center'>\n    <img src='98822001.png' alt=POINDIMIE: [165.33E / -20.93S], 14.00 m. width='480' height='320'> </div>");
+      circle_34._popup.options.maxWidth = 300;
+      map.addLayer(circle_34)
+      
+      var circle_35 = L.circle([-21.177, 165.285333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_35.bindPopup("<div align='center'>\n    <img src='98823002.png' alt=AOUPINIE: [165.29E / -21.18S], 905.00 m. width='480' height='320'> </div>");
+      circle_35._popup.options.maxWidth = 300;
+      map.addLayer(circle_35)
+      
+      var circle_36 = L.circle([-20.398167, 164.587], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_36.bindPopup("<div align='center'>\n    <img src='98824001.png' alt=POUEBO P.: [164.59E / -20.40S], 13.00 m. width='480' height='320'> </div>");
+      circle_36._popup.options.maxWidth = 300;
+      map.addLayer(circle_36)
+      
+      var circle_37 = L.circle([-21.1195, 164.901333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_37.bindPopup("<div align='center'>\n    <img src='98825001.png' alt=POUEMBOUT: [164.90E / -21.12S], 27.00 m. width='480' height='320'> </div>");
+      circle_37._popup.options.maxWidth = 300;
+      map.addLayer(circle_37)
+      
+      var circle_38 = L.circle([-20.081167, 164.031333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_38.bindPopup("<div align='center'>\n    <img src='98826002.png' alt=POINGAM: [164.03E / -20.08S], 34.00 m. width='480' height='320'> </div>");
+      circle_38._popup.options.maxWidth = 300;
+      map.addLayer(circle_38)
+      
+      var circle_39 = L.circle([-21.345333, 165.157], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_39.bindPopup("<div align='center'>\n    <img src='98827001.png' alt=POYA: [165.16E / -21.35S], 7.00 m. width='480' height='320'> </div>");
+      circle_39._popup.options.maxWidth = 300;
+      map.addLayer(circle_39)
+      
+      var circle_40 = L.circle([-21.318167, 165.002167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_40.bindPopup("<div align='center'>\n    <img src='98827002.png' alt=NEPOUI: [165.00E / -21.32S], 82.00 m. width='480' height='320'> </div>");
+      circle_40._popup.options.maxWidth = 300;
+      map.addLayer(circle_40)
+      
+      var circle_41 = L.circle([-21.796333, 166.4915], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_41.bindPopup("<div align='center'>\n    <img src='98829003.png' alt=BORINDI: [166.49E / -21.80S], 5.00 m. width='480' height='320'> </div>");
+      circle_41._popup.options.maxWidth = 300;
+      map.addLayer(circle_41)
+      
+      var circle_42 = L.circle([-20.789333, 165.2545], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_42.bindPopup("<div align='center'>\n    <img src='98830002.png' alt=TOUHO AEROD.: [165.25E / -20.79S], 2.00 m. width='480' height='320'> </div>");
+      circle_42._popup.options.maxWidth = 300;
+      map.addLayer(circle_42)
+      
+      var circle_43 = L.circle([-22.1565, 166.939], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_43.bindPopup("<div align='center'>\n    <img src='98832002.png' alt=YATE MRIE: [166.94E / -22.16S], 25.00 m. width='480' height='320'> </div>");
+      circle_43._popup.options.maxWidth = 300;
+      map.addLayer(circle_43)
+      
+      var circle_44 = L.circle([-22.041667, 166.505], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_44.bindPopup("<div align='center'>\n    <img src='98832003.png' alt=DZUMAC: [166.50E / -22.04S], 891.00 m. width='480' height='320'> </div>");
+      circle_44._popup.options.maxWidth = 300;
+      map.addLayer(circle_44)
+      
+      var circle_45 = L.circle([-22.143833, 166.593167], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_45.bindPopup("<div align='center'>\n    <img src='98832004.png' alt=MTGNE SOURCES: [166.59E / -22.14S], 773.00 m. width='480' height='320'> </div>");
+      circle_45._popup.options.maxWidth = 300;
+      map.addLayer(circle_45)
+      
+      var circle_46 = L.circle([-22.132667, 166.726333], 2500, {
+                            color: 'None',
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.6
+                            });
+      circle_46.bindPopup("<div align='center'>\n    <img src='98832006.png' alt=RIVIERE BLANCHE: [166.73E / -22.13S], 171.00 m. width='480' height='320'> </div>");
+      circle_46._popup.options.maxWidth = 300;
+      map.addLayer(circle_46)
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+   </script>
+
+</body>
