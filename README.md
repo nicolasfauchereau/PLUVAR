@@ -18,7 +18,7 @@ See e.g. [https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index.html](htt
 
 ### time of the diurnal cycle maximum
 
-The figure below shows the local time of the maximum in the mean diurnal cycle of precipitation (sum of first 2 harmonics). Most stations have a late afternoon maximum. Note that this should be related to the previous plot: for station where the mean diurnal cycle is very noisy (low % of variance explained by the sum of the first 2 harmonics), the timing of the maximum bears little significance.
+The figure below shows the local time of the maximum in the mean diurnal cycle of precipitation (sum of first 2 harmonics). Most stations have a late afternoon maximum. Note that this should be related to the previous plot: for stations where the mean diurnal cycle is very noisy (low % of variance explained by the sum of the first 2 harmonics), the timing of the maximum bears little significance.
 
 ![max](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/position_max_diurnal_cycle.png "diurnal cycle maximum")
 
@@ -39,11 +39,11 @@ The idea is to use clustering methods (see e.g. [here](https://en.wikipedia.org/
 There are several methods available, with non-hierarchical methods (e.g. [*k*-means](https://en.wikipedia.org/wiki/K-means_clustering), [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN), ...) usually employed. However, these methods require the
 number of clusters (*groups*, *regimes*) to be specified *a-priori*, and in most cases (including this one) the optimal partition of the dataset is not known.  
 
-[Affinity Propagation (AP)](https://en.wikipedia.org/wiki/Affinity_propagation) is a clustering method based on *message passing* between data points. Unlike clustering algorithms such as *k*-means or *k*-medoids, AP does not require the number of clusters to be determined or estimated before running the algorithm. Like *k*-medoids, AP finds **exemplars**, or members of the original dataset that are representative of clusters (i.e. the *archetype*).
+[Affinity Propagation (AP)](https://en.wikipedia.org/wiki/Affinity_propagation) is a clustering method based on *message passing* between data points. Unlike clustering algorithms such as *k*-means or *k*-medoids, AP does not require the number of clusters to be determined or estimated before running the algorithm. Like *k*-medoids, AP finds **exemplars**, or members of the original dataset that are representative of their corresponding clusters (i.e. the *archetype*).
 
 The original reference is [Brendan J. Frey and Delbert Dueck. Clustering by Passing Messages Between Data Points. Science, vol 315, pages 972-976, 2007.](http://science.sciencemag.org/content/315/5814/972)
 
-AP is performed on respectively the total precipitation (in mm, left hand figure above) and the precipitation relative to the month average (right hand figure above)
+here *AP* is performed on respectively the mean precipitation (in mm, left hand figure above) and the precipitation relative to the month average (right hand figure above)
 
 #### clustering on the filtered values (1st 2 harmonics)
 
@@ -54,6 +54,8 @@ AP is performed on respectively the total precipitation (in mm, left hand figure
 ![AP](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/classif_5clusters_AP_f_d.png "AP filtered / normalized")
 
 <hr size=100>
+
+*to be continued ...*
 
 ### comparison with TRMM 3B42 Satellite estimates (in progress)
 
