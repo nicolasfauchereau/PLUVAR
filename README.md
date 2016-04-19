@@ -12,6 +12,10 @@ or:
 
 ![var explained](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/map_var_explained_2harm.png "variance explained")
 
+### time of the diurnal cycle maximum
+
+![max](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/position_max_diurnal_cycle.png "diurnal cycle maximum")
+
 ### comparison with TRMM 3B42 Satellite estimates (in progress)
 
 The 3-hourly Satellite estimates (00Z, 03Z, 09Z, 12Z, 15Z, 18Z, 21Z) are available from:
