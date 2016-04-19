@@ -24,7 +24,7 @@ or:
 
 #### clustering on the filtered values (1st 2 harmonics) normalized by the month's average
 
-![AP](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/classif_6clusters_AP_f_d.png "AP filtered / normalized")
+![AP](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/classif_5clusters_AP_f_d.png "AP filtered / normalized")
 
 ### comparison with TRMM 3B42 Satellite estimates (in progress)
 
