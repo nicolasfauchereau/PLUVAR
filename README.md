@@ -53,12 +53,14 @@ here *AP* is performed on respectively the mean precipitation (in mm, left hand 
 
 ![AP](https://raw.githubusercontent.com/nicolasfauchereau/PLUVAR/master/figures/classif_5clusters_AP_f_d.png "AP filtered / normalized")
 
-<hr size=100>
-
 *to be continued ...*
+
+<hr size=100>
 
 ### comparison with TRMM 3B42 Satellite estimates (in progress)
 
 The 3-hourly Satellite estimates (00Z, 03Z, 09Z, 12Z, 15Z, 18Z, 21Z) are available from:
 
 ftp://disc2.nascom.nasa.gov/data/TRMM/Gridded/3B42_V7
+
+currently they are being processed (i.e. converted from binary, domain extraction over the Pacific [50S -> 30N, 90E -> 290E], and saved in NetCDF)
