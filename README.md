@@ -1,12 +1,14 @@
 # PLUVAR
 
-### Interactive map of New Caledonia rainfall diurnal cycles at:
+### Interactive map of New Caledonia rainfall diurnal cycles :
 
-[https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index.html](https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index.html) (updated)
+#### for the summer (November - April)
 
-or:
+[https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index.html](https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index_summer.html) (updated)
 
-[https://cdn.rawgit.com/nicolasfauchereau/PLUVAR/master/www/map.html](https://cdn.rawgit.com/nicolasfauchereau/PLUVAR/master/www/map.html) (cached)
+#### for the winter (May - October)
+
+[https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index.html](https://rawgit.com/nicolasfauchereau/PLUVAR/master/www/index_winter.html) (updated)
 
 ### percentage of variance explained by the 1st 2 harmonics
 
